@@ -11,28 +11,27 @@ export const Navbar = () => {
 
   return (
     <div className='w-full h-[80px] fixed px-4 flex items-center justify-between text-gray-100'>
-      {/* logo */}
       <div>
         <img src={logo} alt="logo" className='w-[50px]' />
       </div>
-      {/* navbar items */}
-      {
-        links.map((link)=>(
-          <ul key={link.id} className='hidden md:flex'>
-            <li>{link.name}</li>
-          </ul>
-        ))
-      }
-      {/* hamburger menu icon */}
+      <ul className='flex'>
+        {
+          links.map((link) => (
+            <li className='curson-pointer px-4 hover: scale-105 duration-200 font-medium md:text-2xl' key={link.id}>{link.name}</li>
+          ))
+        }
+      </ul>
+
       <div onClick={handleNavbar} className='md:hidden z-10'>
         {!showNavbar? <MenuIcon className='w-[40px]'/>: <XIcon className='w-[40px]'/>}
       </div>
-      {/* mobile menu */}
-        { links.map( (link)=> (
-          <ul key={link.id} className={!showNavbar ? "hidden": "absolute top-0 left-0 w-full h-screen flex flex-col justify-center"}>
-            <li className='px-6 text-3xl'>{link.name}</li>
-          </ul>
-        ))}
+      <ul className={!showNavbar ? "hidden": "absolute top-0 left-0 w-full h-screen flex flex-col justify-center"}>
+        {
+          links.map((link)=> (
+            <li key={link.id} className='px-4 text-2xl'>{link.name}</li>
+          ))
+        }
+      </ul>
 
       {/* social icons */}
       <div className='hidden fixed md:flex flex-col top-[35%] left-0'>
