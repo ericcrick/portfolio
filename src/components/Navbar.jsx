@@ -16,8 +16,10 @@ export const Navbar = () => {
       </div>
       <ul className='flex'>
         {
-          links.map((link) => (
-            <li className='curson-pointer px-4 hover: scale-105 duration-200 font-medium md:text-2xl' key={link.id}>{link.name}</li>
+          links.map(({id,name}) => (
+            <li className='curson-pointer px-4 hover: scale-105 duration-200 font-medium md:text-2xl' key={id}>
+              {name}
+            </li>
           ))
         }
       </ul>
@@ -27,8 +29,8 @@ export const Navbar = () => {
       </div>
       <ul className={!showNavbar ? "hidden": "absolute top-0 left-0 w-full h-screen flex flex-col justify-center"}>
         {
-          links.map((link)=> (
-            <li key={link.id} className='px-4 text-2xl'>{link.name}</li>
+          links.map(({id, name})=> (
+            <li key={id} className='px-4 text-2xl'>{name}</li>
           ))
         }
       </ul>
