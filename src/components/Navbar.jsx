@@ -6,6 +6,29 @@ import { BsFillPersonLinesFill} from 'react-icons/bs'
 
 import logo from '../assets/logo.png'
 
+const links = [
+  {
+    id: 1,
+    name: "Home",
+  },
+  {
+    id: 2,
+    name: "About"
+  },
+  {
+    id: 3,
+    name: "Work"
+  },
+  {
+    id: 4,
+    name: "Skills"
+  },
+  {
+    id: 5,
+    name: "Contact"
+  }
+  
+]
 export const Navbar = () => {
   const [showNavbar,setShowNavbar] = useState(false);
   const handleNavbar = () => setShowNavbar(!showNavbar);
