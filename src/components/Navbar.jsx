@@ -41,7 +41,7 @@ export const Navbar = () => {
         socialIcons.map((data)=>(
           <ul key={data.id}>
             <li className={`w-[160px] h-[50px] flex items-center justify-between ml-[-100px] hover:ml-[10px] duration-300 ${data.bgColor}`}>
-              <a className='w-full items-center flex justify-between' href={data.url}>
+              <a className='w-full items-center flex justify-between' target='_blank' href={data.url}>
                 {data.name} < data.icon  width={30}/>
               </a>
             </li>
